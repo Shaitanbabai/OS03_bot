@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Боевые стимпанк-дирижабли</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .дирижабли {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .дирижабль {
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .дирижабль img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .дирижабль h3 {
+            margin-top: 10px;
+        }
+
+        .дирижабль p {
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            min-height: calc(1.2em * 5); /* Задаем минимальную высоту 5 строк */
+            line-height: 1.2em; /* Задаем высоту строки */
+            transition: max-height 0.5s ease-out;
+        }
+
+        .дирижабль p.expanded {
+            display: block;
+            -webkit-line-clamp: unset;
+            max-height: 1000px; /* Достаточно большое значение для раскрытия всего текста */
+        }
+
+        .дирижабль a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .о-нас,
+        .контакты {
+            margin-top: 20px;
+        }
+
+        .read-more {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Боевые стимпанк-дирижабли</h1>
+    </header>
+<main>
+        <section class="дирижабли">
+            <h2>Гроза небес</h2>
+            <div class="дирижабль">
+                <br>
+                <hr>
+                <img src="https://steampunker.ru/uploads/images/00/19/89/2013/02/15/bd1731.jpg" alt="Небесный тихоход">
+                <h3>Небесный тихоход</h3>
+                <p align="left"><b>Длина</b>: 65 метров
+                    <b>Пассажиров</b>: 20
+                    <b>Грузоподъемность</b>: 5 тонн
+                    <b>Оружие</b>: 2 пушки калибра 75 мм, 1 пулемет Maxim
+                    <b>Описание</b>: "Небесный исполин" - это грозный дирижабль, бороздящий небеса в поисках врагов империи. Оснащенный мощными пушками и опытным экипажем, он представляет собой настоящую угрозу для любого, кто посмеет встать на его пути. Его прочный корпус из кованого железа и внушительный размер делают его устрашающим зрелищем, а его надежные паровые двигатели обеспечивают ему высокую маневренность.
+                </p>
+                <span class="read-more">Читать далее</span>
+                <button><a href="https://steampunker.ru/blog/8242.html">Подробнее</a></button>
+                <br>
+                <hr>
+            </div>
+            <div class="дирижабль">
+                <br>
+                <hr>
+                <img src="https://cdn.fishki.net/upload/post/2019/11/16/3142084/tn/36a850408d17dcc695fecb0c9111b733.jpg" alt="Дирижабль 2">
+                <h3>Протагонист</h3>
+                <p>Первый в мире, аналогов нет, секретная отечественная разработка</p>
+                <span class="read-more">Читать далее</span>
+                <button><a href="https://fishki.net/3142084-aima-wars-celyj-mir-dirizhablej-vojny-i-stimpanka.html">Подробнее</a></button>
+                <br>
+                <hr>
+            </div>
+            <div class="дирижабль">
+                <br>
+                <hr>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hindenburg_disaster.jpg/1024px-Hindenburg_disaster.jpg" alt="Дирижабль 3">
+                <h3>Гинденбург</h3>
+                <p>Просто зашел не в ту дверь. Ну, так бывает</p>
+                <span class="read-more">Читать далее</span>
+                <button><a href="https://fishki.net/3142084-aima-wars-celyj-mir-dirizhablej-vojny-i-stimpanka.html">Подробнее</a></button>
+                <br>
+                <hr>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const readMoreButtons = document.querySelectorAll('.read-more');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const paragraph = button.previousElementSibling;
+                    paragraph.classList.toggle('expanded');
+                    button.textContent = paragraph.classList.contains('expanded') ? 'Скрыть' : 'Читать далее';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

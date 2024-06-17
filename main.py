@@ -1,10 +1,8 @@
 import telebot
 from config import Config
+
 bot = telebot.TeleBot(Config.TELEGRAM_API_TOKEN)
 message_count = 0
-
-# Указываем токен вашего бота
-TOKEN = '7253573914:AAHXVvV9Du04ujMJ7SIwfPZePA1xr4YCS6s'
 
 
 # Обработчик всех входящих сообщений
